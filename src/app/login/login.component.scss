@@ -1,0 +1,158 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.navbar-container {
+  padding: 20px 24px 20px 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  // border: 1px solid red;
+}
+
+.navbarlogo {
+  font-weight: 900;
+  font-size: 26px;
+  color: #1A96F0;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  display: flex;
+  // align-items: flex-start; 
+  // margin-top: 40px;
+  // margin-bottom: 40px;
+  flex: auto;
+}
+
+.login-image-container {
+  max-height: 200px; 
+  margin-right: 1px; 
+  flex: auto;
+}
+
+.login-image {
+  max-width: 95%;
+  // height: auto;
+  padding: 100px;
+  flex: auto;
+}
+
+.login-form {
+  // display: flex;
+  // flex-direction: column;
+  padding: 100px;
+  flex: auto;
+}
+
+.login-form h2 {
+  flex: auto;
+}
+
+.input-container p {
+  // color: #333333;
+  flex: auto;
+}
+
+.input-container input {
+  border: 0;
+  background-color: #d7dae0;
+  color: #8a8e95;
+  width: 620px;
+  padding: 17px 28px;
+  font-size: 18px;
+  border-radius: 8px;
+}
+
+.login-form button {
+  margin-top: 32px;
+  width: 620px;
+  height: 64px;
+  border: 0;
+  background-color: #1A96F0;
+  border-radius: 10px;
+  font-size: 18px;
+  color: white;
+  font-weight: 900;
+  flex: auto;
+}
+
+// div {
+//   padding: 10px;
+//   margin-top: 10px;
+//   border-radius: 4px;
+// }
+
+.p-field {
+  margin-bottom: 20px;
+
+  .p-error {
+    color: #ff3860;
+    background-color: #fde2e5; 
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+
+    .pi {
+      margin-right: 5px;
+      font-size: 1.2em;
+      color: #ff3860;
+    }
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes iconFadeInOut {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* login.component.scss */
+input.ng-valid {
+  border-color: #4caf50 !important;
+}
+
+input.ng-invalid {
+  border-color: #d82121 !important;
+}
+
+.password-valid {
+  border-color: green;
+}
+
+.password-invalid {
+  border-color: red;
+}
+
+// .valid {
+//   border: 2px solid green;
+// }
+
+// .invalid {
+//   border: 2px solid red;
+// }
+
+
+
+

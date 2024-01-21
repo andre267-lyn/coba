@@ -1,0 +1,56 @@
+<mat-table [dataSource]="dataSource" matSort>
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>
+    </ng-container>
+  
+    <!-- Account Number Column -->
+    <ng-container matColumnDef="accountNumber">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Account Number </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.accountNumber}} </mat-cell>
+    </ng-container>
+  
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.email}} </mat-cell>
+    </ng-container>
+  
+    <!-- Phone Number Column -->
+    <ng-container matColumnDef="phoneNumber">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Phone Number </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.phoneNumber}} </mat-cell>
+    </ng-container>
+  
+    <!-- Debit Card Type Column -->
+    <ng-container matColumnDef="debitCardType">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Debit Card Type </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.debitCardType}} </mat-cell>
+    </ng-container>
+  
+    <!-- Mother Maiden Name Column -->
+    <ng-container matColumnDef="motherMaidenName">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Mother Maiden Name </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.motherMaidenName}} </mat-cell>
+    </ng-container>
+  
+    <!-- Account Creation Time Column -->
+    <ng-container matColumnDef="accountCreationTime">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Account Creation Time </mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.accountCreationTime}} </mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  

@@ -1,0 +1,63 @@
+<!-- login.component.html -->
+<div class="navbar-container">
+  <div class="navbarlogo">Topbank</div>
+</div>
+<main>
+  <div class="login-container">
+    <div class="login-image-container">
+      <img src="./assets/Group_1954.jpg" alt="Topbank Logo" class="login-image">
+    </div>
+    <div class="login-form">
+      <form [formGroup]="loginForm" (submit)="onSubmit()">
+        <h2>Login</h2>
+        
+        <div class="input-container">
+          <label for="email">Email</label>
+          <br>
+          <br>
+          <div class="p-field">
+            <input id="email" type="text" pInputText formControlName="email" placeholder="youremail@mail.com" autocomplete="email">
+            <div *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched" [@fadeInOut] class="p-error">
+               Email is required!
+            </div>
+          </div>
+        </div>
+        <br>
+        
+        <div class="input-container">
+          <label for="password">Password</label>
+          <br>
+          <br>
+          <div class="p-field">
+            <input id="password" [type]="showPassword ? 'text' : 'password'" pPassword formControlName="password" placeholder="Enter your password" (input)="validatePassword()">
+            <br>
+            <br>
+            <div class="p-field" [ngClass]="{'valid': isPasswordValid(loginForm.get('password')?.value), 'invalid': passwordValidationVisible}"></div>
+            <div *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched" [@fadeInOut] class="p-error">
+              Password is required!
+            </div>
+            <div *ngIf="loginForm.get('password')?.hasError('minlength') && loginForm.get('password')?.touched" [@fadeInOut] class="p-error">
+              Password must be at least 8 characters!
+            </div>
+            <div *ngIf="loginForm.get('password')?.hasError('pattern') && loginForm.get('password')?.touched" [@fadeInOut] class="p-error">
+              Password must contain at least:
+              <div *ngIf="loginForm.get('password')?.hasError('pattern', 'number')">
+                1 number
+              </div>
+              <div *ngIf="loginForm.get('password')?.hasError('pattern', 'upper')">
+                1 uppercase letter
+              </div>
+              <div *ngIf="loginForm.get('password')?.hasError('pattern', 'lower')">
+                1 lowercase letter
+              </div>
+              <div *ngIf="loginForm.get('password')?.hasError('pattern', 'special')">
+                1 special character
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="submit" pButton label="Login"></button>
+      </form>
+    </div>
+  </div>
+</main>
